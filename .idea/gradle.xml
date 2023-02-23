@@ -17,6 +17,11 @@
                   <project path="$PROJECT_DIR$/src/resourceserver" />
                 </projects>
               </build>
+              <build path="$PROJECT_DIR$/src/customresourceserver" name="ResourceServer">
+                <projects>
+                  <project path="$PROJECT_DIR$/src/customresourceserver" />
+                </projects>
+              </build>
             </builds>
           </compositeBuild>
         </compositeConfiguration>
@@ -25,6 +30,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/src/customresourceserver" />
             <option value="$PROJECT_DIR$/src/idp" />
             <option value="$PROJECT_DIR$/src/resourceserver" />
           </set>
