@@ -1,0 +1,24 @@
+foo:
+  bar: 22
+
+server:
+  port: 8081
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/dev
+          token-uri: http://localhost:8080/realms/dev/protocol/openid-connect/token
+    #      jwk-set-uri: http://localhost:8080/realms/dev/protocol/openid-connect/token
+      client:
+        registration:
+          keycloak:
+            client-id: my-client
+            client-secret: IOTBiq14Dj8sxSArhdJ58pyQxVVb7BeB
+            authorization-grant-type: authorization_code
+            scope: openid
+      #  provider:
+     #     keycloak:
+      #      issuer-uri: https://localhost:8080/auth/realms/test
+       #     token-uri: https://localhost:8080/auth/realms/dev/protocol/openid-connect/token

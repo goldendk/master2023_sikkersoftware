@@ -10,7 +10,10 @@ Keycloak hello world:
 https://www.keycloak.org/getting-started/getting-started-zip
 
 Keycloak open-id configuration:
-http://localhost:8080/realms/test/.well-known/openid-configuration
+http://localhost:8080/realms/dev/.well-known/openid-configuration
 
 Keycloak: Certificates URI
-http://localhost:8080/realms/test/protocol/openid-connect/certs
+http://localhost:8080/realms/dev/protocol/openid-connect/certs
+
+
+--spring.config.location=D:/sandbox/workspaces/masterit/SikkerSoftwareMiniProject/src/resourceserver/src/main/resources/
