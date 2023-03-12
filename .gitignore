@@ -1,0 +1,27 @@
+# gradle temporary files
+**/.gradle/
+
+# various build outputs
+build/
+out/
+logs/
+tmp/
+
+
+# Ignore idea configuration by default
+# But include specific files with settings that can not be synchronized from gradle.
+# This includes JDK, codestyle and encoding
+**/.idea/*
+**/.idea/modules/*
+**/.idea/dataSources/*
+**/.idea/codeStyles/
+**/.idea/codeStyles/Project.xml
+**/.idea/codeStyles/codeStyleConfig.xml
+**/.idea/compiler.xml
+**/.idea/encodings.xml
+**/.idea/vcs.xml
+**/.idea/misc.xml
+### Application specific:
+# Local h2 database, used for development
+/db/
+/application/db/

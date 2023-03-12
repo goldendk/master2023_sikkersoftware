@@ -1,0 +1,16 @@
+Setting spring security context manually:
+https://www.baeldung.com/manually-set-user-authentication-spring-security
+
+
+Decoding a jwt in Java.
+https://www.baeldung.com/java-jwt-token-decode
+
+
+Keycloak hello world:
+https://www.keycloak.org/getting-started/getting-started-zip
+
+Keycloak open-id configuration:
+http://localhost:8080/realms/test/.well-known/openid-configuration
+
+Keycloak: Certificates URI
+http://localhost:8080/realms/test/protocol/openid-connect/certs
