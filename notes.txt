@@ -17,3 +17,65 @@ http://localhost:8080/realms/dev/protocol/openid-connect/certs
 
 
 --spring.config.location=D:/sandbox/workspaces/masterit/SikkerSoftwareMiniProject/src/resourceserver/src/main/resources/
+
+
+
+
+when starting up:
+GET /realms/dev/.well-known/openid-configuration
+GET /realms/dev/.well-known/openid-configuration/openid-connect/certs
+
+
+
+Getting token:
+================================
+POST /realms/dev/protocol/openid-connect/token HTTP/1.1
+User-Agent: PostmanRuntime/7.31.0
+Accept: */*
+Postman-Token: f5a19101-368e-4520-85c4-68b0f64f725c
+Host: localhost:8080
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 96
+
+grant_type=client_credentials&client_id=my-client&client_secret=IOTBiq14Dj8sxSArhdJ58pyQxVVb7BeBHTTP/1.1 200 OK
+Referrer-Policy: no-referrer
+X-Frame-Options: SAMEORIGIN
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Set-Cookie: KC_RESTART=; Version=1; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Max-Age=0; Path=/realms/dev/; HttpOnly
+Pragma: no-cache
+X-XSS-Protection: 1; mode=block
+Content-Type: application/json
+content-length: 1467
+
+{"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzTHRCZXY0N0pJc1N6QVdRNkFKSVFGRmJOdV90NGhDUC1GMXYtSld4RkVJIn0.eyJleHAiOjE2Nzg2Mzc3MjksImlhdCI6MTY3ODYzNzQyOSwianRpIjoiMjI0NDU5OTAtNDU3OC00NjNiLWJlNjktMTNmMmU5ODAwYzQ3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9kZXYiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNTBkNzRmMTctODNjNi00ODAxLWFkOGQtOTU0YmM0YjViMzM2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibXktY2xpZW50IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwOi8vbG9jYWxob3N0OjgwODEqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWRldiIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im15LWN1c3RvbS1jbGllbnQtc2NvcGUgcHJvZmlsZSBlbWFpbCIsImNsaWVudElkIjoibXktY2xpZW50IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjbGllbnRIb3N0IjoiMTI3LjAuMC4xIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LW15LWNsaWVudCIsImNsaWVudEFkZHJlc3MiOiIxMjcuMC4wLjEifQ.JqPVb44Nh7Bb8aiixqW_oNeZWBa4dMhcOMF7NxAIvp5z3Jk1b7slSoOAWEOjGs_4TPLrZZghgvYhlUQty347se3rZ8-9ly70MiTDfhhwQHOUX0Z1HNYhUBq6lTzpHdVsSr41_E_R99I0P95y-naCDN0-ffsezT5kBZSylM9z9FbyXTgy0DGwq1uRG_05pME68zPfQaNlGbTW5aBVzRoKfiUzGy5gDc4rAxpReS7dThpLf_K8ixwBviYI4QqrSO2VlgoniRsApyLawG2A1MEy9YqO2zH_zs-GkN16HasVLAKmepe7cRCX4YrWCqW7-F-je4zkJpSy2347gai3bipDzA","expires_in":300,"refresh_expires_in":0,"token_type":"Bearer","not-before-policy":0,"scope":"my-custom-client-scope profile email"}
+
+
+authenticating (no download needed)
+================================================
+GET /articles HTTP/1.1
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzTHRCZXY0N0pJc1N6QVdRNkFKSVFGRmJOdV90NGhDUC1GMXYtSld4RkVJIn0.eyJleHAiOjE2Nzg2Mzc4MTMsImlhdCI6MTY3ODYzNzUxMywianRpIjoiNDFkZWFmODQtZDg4MC00NzNlLWFjOTItN2JhNzJkYmQyOTY5IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9kZXYiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNTBkNzRmMTctODNjNi00ODAxLWFkOGQtOTU0YmM0YjViMzM2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibXktY2xpZW50IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwOi8vbG9jYWxob3N0OjgwODEqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWRldiIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im15LWN1c3RvbS1jbGllbnQtc2NvcGUgcHJvZmlsZSBlbWFpbCIsImNsaWVudElkIjoibXktY2xpZW50IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjbGllbnRIb3N0IjoiMTI3LjAuMC4xIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LW15LWNsaWVudCIsImNsaWVudEFkZHJlc3MiOiIxMjcuMC4wLjEifQ.bWQItTKkhazldeyDuqK7G5v6A3iex2U-Rw3njMdae5JFPMkFYTj6WEMx440nDOKnDXAuMzkuQvsSzZMrLhrcZOlqDtXYbgAIVAWmV06y0xX8QrPu1u1chc4fZpz_SlJQqGYxYNevCGx9M-ZdP8iwiCVK9sa287RWUmrva3-H9FbDOb-_oVZT6Iwh4piXQg5rnVSIHTwCirHY5xDH7QyUSQAyUkg0TB0BDgw7dj-QWQzK4d8ABL7kpK7S7_WPVmjnL2hCiQ12kyevXseoSbeOmQzCp01Y4WHbLoQLBZTTbmAamJBEUR4d7QALQu2DapzE4DcDW4QFEEiDGa2Q5LgU0g
+User-Agent: PostmanRuntime/7.31.0
+Accept: */*
+Postman-Token: ae7e015f-53ce-4bb4-971c-e4c06eff6ff8
+Host: localhost:8081
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+HTTP/1.1 200
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sun, 12 Mar 2023 16:12:10 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+["Article 1","Article 2","Article 3"]
