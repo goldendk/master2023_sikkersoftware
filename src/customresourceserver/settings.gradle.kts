@@ -1,2 +1,2 @@
-rootProject.name = "ResourceServer"
+rootProject.name = "CustomResourceServer"
 

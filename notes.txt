@@ -1,6 +1,10 @@
 Setting spring security context manually:
 https://www.baeldung.com/manually-set-user-authentication-spring-security
 
+keycloak verifycation example:
+https://www.janua.fr/keycloak-access-token-verification-example/
+
+
 
 Decoding a jwt in Java.
 https://www.baeldung.com/java-jwt-token-decode
@@ -23,7 +27,7 @@ http://localhost:8080/realms/dev/protocol/openid-connect/certs
 
 when starting up:
 GET /realms/dev/.well-known/openid-configuration
-GET /realms/dev/.well-known/openid-configuration/openid-connect/certs
+GET /realms/dev/protocol/openid-connect/certs
 
 
 
@@ -79,3 +83,21 @@ Keep-Alive: timeout=60
 Connection: keep-alive
 
 ["Article 1","Article 2","Article 3"]
+
+
+The plan for manual token verification:
+
+1. Download well-known configuration and the associated certificates.
+2. Save these in a cache.
+3. Attempt to verify signature using Baeldungs guide.
+
+
+jwt validation rfc:
+https://www.rfc-editor.org/rfc/rfc7519#section-7.2
+
+jwks (json web key sets)
+https://auth0.com/docs/secure/tokens/json-web-tokens/json-web-key-sets
+
+https://mojoauth.com/blog/jwt-validation-with-jwks-java/
+
+

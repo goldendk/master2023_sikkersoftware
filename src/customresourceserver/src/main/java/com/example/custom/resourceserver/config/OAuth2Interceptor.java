@@ -3,7 +3,6 @@ package com.example.custom.resourceserver.config;
 import com.example.custom.resourceserver.verification.JWTTokenVerifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.support.SecurityContextProvider;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +16,7 @@ public class OAuth2Interceptor implements HandlerInterceptor {
 
 
         JWTTokenVerifier verifier = new JWTTokenVerifier();
-        verifier.setAuthorizationHeader(request.getHeader("Authorization"));
+        verifier.setBearerToken(request.getHeader("Authorization"));
         verifier.parseToken();
 
         if (!verifier.isValidToken()) {

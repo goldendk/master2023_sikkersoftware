@@ -17,7 +17,7 @@
                   <project path="$PROJECT_DIR$/src/resourceserver" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/src/customresourceserver" name="ResourceServer">
+              <build path="$PROJECT_DIR$/src/customresourceserver" name="CustomResourceServer">
                 <projects>
                   <project path="$PROJECT_DIR$/src/customresourceserver" />
                 </projects>
@@ -25,6 +25,8 @@
             </builds>
           </compositeBuild>
         </compositeConfiguration>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
