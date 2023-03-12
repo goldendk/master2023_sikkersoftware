@@ -100,4 +100,7 @@ https://auth0.com/docs/secure/tokens/json-web-tokens/json-web-key-sets
 
 https://mojoauth.com/blog/jwt-validation-with-jwks-java/
 
+theory about the jwks keys and exponent:
+https://medium.com/@bn121rajesh/understanding-rsa-public-key-70d900b1033c
+
 

@@ -11,6 +11,7 @@ public class JWTTokenVerifierTest {
     //from boot spring
     private final String pemModulus = "s9IvhlvbCs3-8sX9VPHjMlefPTZm6NeUDCAsD5HT-q91NP2ECiGnWxxBk5dnSkQwjskbgneIxfAtdLziYIMjUcUU2eHMcUxMMi7XdmGNrepSnq12tmkb2LMaZVkQ7xIIJVkLe-AzwxzPV_pAEqXSVsdUC7OZhOp9Ob8tZ5cp8dOOyOvWMhs_r1cY7pFaYliqclIpWcVrndZnN-ojbHm1IiqaLtEA9BoDnCTP2YSpj83F0hI5JMMBgZYUDuupJN8eBBZCKsLLRzckZO4q9X_Z59jaImPT48d7nZ97mGzEVOoh9xL_XX8c1oPIJ0dIMPkAXGyC8DJxCASkkeAs3bWgFw";
     private final String pemExponent = "AQAB";
+
     @Test
     public void shouldVerifyToken() throws Exception {
 
@@ -20,6 +21,19 @@ public class JWTTokenVerifierTest {
 
         verifier.parseToken();
         assertTrue(verifier.isValidToken());
+    }
+
+    @Test
+    public void shouldFailDueToBadModulus() throws Exception {
+        JWTTokenVerifier verifier = new JWTTokenVerifier();
+        verifier.setBearerToken(tokenToVerify);
+
+        //replace part of RSA modulus and see that we can no longer verify the token. Alternatively alter sections of the signature in the
+        // JWT token above.
+        verifier.setPublicKey(JWTTokenVerifier.getPublicKey("abc" + pemModulus.substring(3), pemExponent));
+
+        verifier.parseToken();
+        assertFalse(verifier.isValidToken());
     }
 
 }
