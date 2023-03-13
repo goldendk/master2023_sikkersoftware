@@ -34,7 +34,7 @@ public class JWTTokenVerifier {
         String jwt = bearerToken;
         String signedData = jwt.substring(0, jwt.lastIndexOf("."));
         String signatureB64u = jwt.substring(jwt.lastIndexOf(".") + 1, jwt.length());
-        byte signature[] = Base64.getUrlDecoder().decode(signatureB64u);
+        byte[] signature = Base64.getUrlDecoder().decode(signatureB64u);
 
 
         Signature sig = Signature.getInstance("SHA256withRSA");
