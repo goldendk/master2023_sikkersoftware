@@ -1,0 +1,24 @@
+@startuml
+autonumber
+participant c as "Client"
+participant auth as "Authorization\nServer"
+participant rs as "Resource\nServer"
+
+c->auth: getToken(client_id, client_secret)
+auth->auth: generate token and sign
+
+auth->c : signed token
+
+c->rs: getData(token)
+
+rs->auth: get public key
+auth->rs: public key data
+
+rs->rs: verify signature
+
+rs->rs: load data
+
+rs->c: data
+
+
+@enduml
